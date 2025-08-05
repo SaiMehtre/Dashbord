@@ -28,3 +28,10 @@ Whether you're building a SaaS dashboard, internal admin panel, or data-driven w
 - **Bootstrap Icons**
 
 ---
+
+## 🧰 Screenshots of Dashboard
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4c18f772-ed31-4fa2-9dbf-52f0dc511844" />
+
+
+
