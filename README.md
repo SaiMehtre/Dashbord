@@ -18,17 +18,6 @@ Whether you're building a SaaS dashboard, internal admin panel, or data-driven w
 
 ---
 
-## 🗂️ Project Structure
-│
-├── detail.html # Main dashboard HTML page
-├── style.css # Custom styles
-├── script.js # JS for charts, counters, theme toggle
-├── README.md # Project documentation
-└── (assets/) # Optional: images/icons
-
-
----
-
 ## 🧰 Technologies Used
 
 - **HTML5**
