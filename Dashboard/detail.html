@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Details Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+
+    <!-- Sidebar -->
+  <nav id="sidebar" class="bg-dark text-white position-fixed vh-100 p-3">
+    <h3 class="text-center mb-4">My Dashboard</h3>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a href="dashboard.html" class="nav-link text-white" data-bs-toggle="tooltip" title="home page">
+          <i class="bi bi-house-door-fill me-2"></i> Home
+        </a>
+      </li>
+      <li class="nav-item" data-bs-toggle="tooltip" title="go to details page">
+        <a href="detail.html" class="nav-link text-white">
+          <i class="bi bi-graph-up-arrow me-2"></i> Details
+        </a>
+      </li>
+    </ul>
+    <button id="toggleTheme" class="btn btn-secondary mt-4 w-100" data-bs-toggle="tooltip" title="Toggle Light/Dark Theme" data-bs-placement="top">dark Theme</button>
+    <button id="collapseSidebar" class="btn btn-outline-light mt-2 w-100">Collapse</button>
+  </nav>
+
+  <!-- Header -->
+  <div class="content">
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm mb-4">
+    <div class="container-fluid navbar" style="margin-left: 250px;">
+      <a class="navbar-brand" href="detail.html">Details</a>
+      <a href="dashboard.html" class="btn btn-outline-secondary ms-auto" data-bs-toggle="tooltip" title="click got to dashboard page">
+        <i class="bi bi-arrow-left"></i> Back to Dashboard
+      </a>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+
+    <!-- Data Table -->
+    <div class="card shadow-sm fade-in mb-4">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="card-title" ata-bs-toggle="tooltip" title="All Users List is here">User Data</h5>
+          <button class="btn btn-success" id="downloadCSV" ata-bs-toggle="tooltip" title="dont click - work in progress">
+            <i class="bi bi-download"></i> Download CSV
+          </button>
+        </div>
+        <div class="table-responsive">
+          <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search...">
+          <table class="table table-hover table-bordered" id="dataTable">
+            <thead class="table-light">
+              <tr>
+                <th>Sr.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Joined</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th>1</th><td>Sainath Mehtre</td><td>sanath@gmail.com</td><td>2023-01-15</td><td>Active</td></tr>
+              <tr><th>2</th><td>Hari Waradhe</td><td>hari@gmail.com</td><td>2023-03-22</td><td>Inactive</td></tr>
+              <tr><th>3</th><td>Manish Rao</td><td>manish@gmail.com</td><td>2022-11-08</td><td>Pending</td></tr>
+              <tr><th>4</th><td>Geeta Reddy</td><td>geeta@gmail.com</td><td>2023-02-19</td><td>Active</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6 fade-in">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Monthly Revenue</h5>
+            <canvas id="barChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 fade-in">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">User Registrations</h5>
+            <canvas id="detailedLineChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insight Cards -->
+    <div class="row g-4 mt-4 mb-5">
+        <div class="col-md-6 col-lg-3">
+        <div class="card text-white bg-primary shadow-sm h-100">
+            <div class="card-body">
+            <h6 class="card-title text-center" data-bs-toggle="tooltip" title="total users">Total Users</h6>
+            <h2 class="counter text-danger text-center" data-target="1204">0</h2>
+            <p class="mb-0 text-center"><i class="bi bi-people-fill me-2"></i>Compared to last month: +5%</p>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-6 col-lg-3">
+        <div class="card text-white bg-success shadow-sm h-100">
+            <div class="card-body">
+            <h6 class="card-title text-center" data-bs-toggle="tooltip" title="active users">Active Users</h6>
+            <h2 class="counter text-primary text-center" data-target="845">0</h2>
+            <p class="mb-0 text-center"><i class="bi bi-person-check-fill me-2"></i>Engagement: High</p>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-6 col-lg-3">
+        <div class="card text-white bg-warning shadow-sm h-100">
+            <div class="card-body">
+            <h6 class="card-title text-center" data-bs-toggle="tooltip" title="pending data">Pending Accounts</h6>
+            <h2 class="counter text-danger text-center" data-target="67">0</h2>
+            <p class="mb-0 text-center"><i class="bi bi-hourglass-split me-2"></i>Action Needed</p>
+            </div>
+        </div>
+        </div>
+    
+        <div class="col-md-6 col-lg-3">
+        <div class="card text-bg-danger shadow-sm h-100">
+            <div class="card-body">
+            <h6 class="card-title text-center" data-bs-toggle="tooltip" title="inactive users">Inactive Users</h6>
+            <h2 class="counter text-warning text-center" data-target="67">0</h2>
+            <p class="mb-0 text-center"><i class="bi bi-slash-circle-fill me-2"></i>Retention: Review Needed</p>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+
+  </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
